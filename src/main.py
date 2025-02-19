@@ -1,9 +1,13 @@
 import os
-import io
 import numpy as np
 from moviepy.editor import ImageClip, concatenate_videoclips, AudioFileClip, CompositeAudioClip
 from PIL import Image
 import random
+
+# Usage
+base_path = r"D:\image2video\img\32777"
+bgm_folder = r"D:\image2video\bgm"
+output_folder = r"E:\Youtube\Outputs"
 
 def find_numbered_folders(base_path):
     # Find all folders in the base path that are numbered
@@ -96,11 +100,6 @@ def create_video_from_images_with_bgm(folder_path, bgm_folder, output_folder):
 
     # Write the video file with BGM to the specified output folder
     final_clip.write_videofile(output_file_path, fps=24, audio_codec='aac')
-
-# Usage
-base_path = r"D:\Playground\image2video\img"
-bgm_folder = r"D:\Playground\image2video\bgm"
-output_folder = r"D:\Playground\image2video\outputs"
 
 # Find all numbered folders
 numbered_folders = find_numbered_folders(base_path)
